@@ -1,0 +1,14 @@
+@model Product
+
+<div class="row">
+    <div col="6">
+        <img src="@Model.ImageURL" alt="product" />
+    </div>
+    <div col="6">
+        <div>Model: @Model.Model</div>
+        <div>Year: @Model.Year</div>
+        <div>Price: @Model.Price</div>
+        <div>Brand: @Model.Brand</div>
+        <div>Description: @Model.Description</div>
+    </div>
+</div>
