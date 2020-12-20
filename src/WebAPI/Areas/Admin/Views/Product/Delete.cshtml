@@ -1,0 +1,44 @@
+@model WebAPI.Data.DataModels.Product
+
+    <form method="POST"
+          asp-controller="Poduct"
+          asp-action="Delete"
+          asp-route-id="@Model.Id">
+        <div class="form-group">
+            <label asp-for="Model" class="control-label"></label>
+            <input asp-for="Model" value="@Model.Model" class="form-control" disabled />
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImageURL" class="control-label"></label>
+            <input asp-for="ImageURL" value="@Model.ImageURL" class="form-control" disabled />
+            <span asp-validation-for="ImageURL" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" value="@Model.Price" class="form-control" disabled />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Brand" class="control-label"></label>
+            <input asp-for="Brand" value="@Model.Brand" class="form-control" disabled />
+            <span asp-validation-for="Brand" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Year" class="control-label"></label>
+            <input asp-for="Year" data-date="@Model.Year.ToString("yyyy-MM-dd")" class="form-control" disabled />
+            <span asp-validation-for="Year" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" value="@Model.Description" class="form-control" disabled />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
