@@ -1,0 +1,26 @@
+@model IEnumerable<ServicePackage>
+
+<h1>Yours Services</h1>
+
+<section class="row">
+
+    @foreach (var servicePackage in this.Model)
+    {
+        <article class="col-4" style="background-color: burlywood;">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@servicePackage.Name</h5>
+                    <p class="card-text">@servicePackage.Description</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>Year: @servicePackage.DurationTime.ToString("dd/MM/yyyy")</span>
+                        <span>Price: @servicePackage.Price</span>
+                    </div>
+                    <div>
+                        <a asp-area="" asp-controller="ServicePackage" asp-action="Details" asp-route-id="@servicePackage.Id" class="btn btn-secondary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    }
+
+</section>
